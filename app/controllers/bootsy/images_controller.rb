@@ -21,7 +21,7 @@ module Bootsy
 
     def create
       @gallery.save!
-      @image = @gallery.images.new(image_params)
+      @image = @gallery.images.new(params[:image])
 
       create_and_respond
     end
@@ -71,9 +71,9 @@ module Bootsy
       )
     end
 
-    def image_params
-      params.require(:image).permit(:image_file, :remote_image_file_url)
-    end
+    #def image_params
+    #  params.require(:image).permit(:image_file, :remote_image_file_url)
+    #end
 
     def create_and_respond
       respond_to do |format|

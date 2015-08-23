@@ -8,5 +8,7 @@ module Bootsy
     mount_uploader :image_file, ImageUploader
 
     validates_presence_of :image_file, :image_gallery_id
+
+    attr_accessible :image_file, :remote_image_file_url, :image_gallery_id
   end
 end
